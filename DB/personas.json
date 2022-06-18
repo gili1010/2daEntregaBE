@@ -1,0 +1,20 @@
+[
+  {
+    "nombre": "luciano",
+    "apellido": "Gili",
+    "edad": 32,
+    "id": 1
+  },
+  {
+    "nombre": "cande",
+    "apellido": "Gili",
+    "edad": 6,
+    "id": 2
+  },
+  {
+    "titulo": "vaso",
+    "precio": 200,
+    "img": "img",
+    "id": 3
+  }
+]

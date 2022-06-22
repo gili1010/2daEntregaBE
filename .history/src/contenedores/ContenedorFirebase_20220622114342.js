@@ -61,7 +61,7 @@ class ContenedorFirebase {
     async actualizar(nuevoElem) {
 try {
     let id = "cBrHHmdYIOpGVOfpAW3C"
-    const doc = dbProductos.doc(id);
+    const doc = query.doc(`${id}`);
     let item = await doc.update(nuevoElem);
     return item
 } catch (error) {
@@ -70,13 +70,7 @@ try {
     }
 
     async borrar(id) {
-        try {
-            const doc = dbProductos.doc(id);
-            const item = await doc.delete();
-            return `producto con el id:${id} borrado`
-        } catch (error) {
-            console.log(error);
-        }
+
     }
 
     async borrarAll() {

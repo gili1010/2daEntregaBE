@@ -23,7 +23,7 @@ class ContenedorFirebase {
 
     async listar(id) {
         try {
-            //let id = 2
+            let id = 2
             const doc = dbProductos.doc(id)
             const item = await doc.get()
             const response = item.data()
@@ -39,7 +39,6 @@ class ContenedorFirebase {
             const querySnapshot = await dbProductos.get()
             let docs = querySnapshot.docs;
             const response = docs.map((doc) => ({
-                id1:doc.id,
                 id:doc.data().id,
                 titulo:doc.data().titulo,
                 precio: doc.data().precio,
@@ -53,30 +52,16 @@ class ContenedorFirebase {
     }
 
     async guardar(nuevoElem) {
-        const guardado = await dbProductos.add(nuevoElem);
+        const guardado = await dbPersonas.add({ nuevoElem });
         console.log(guardado.id)
-        return guardado
     }
 
     async actualizar(nuevoElem) {
-try {
-    let id = "cBrHHmdYIOpGVOfpAW3C"
-    const doc = dbProductos.doc(id);
-    let item = await doc.update(nuevoElem);
-    return item
-} catch (error) {
-    console.log(error);
-}
+
     }
 
     async borrar(id) {
-        try {
-            const doc = dbProductos.doc(id);
-            const item = await doc.delete();
-            return `producto con el id:${id} borrado`
-        } catch (error) {
-            console.log(error);
-        }
+
     }
 
     async borrarAll() {

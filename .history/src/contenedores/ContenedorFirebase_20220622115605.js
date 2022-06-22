@@ -73,7 +73,7 @@ try {
         try {
             const doc = dbProductos.doc(id);
             const item = await doc.delete();
-            return `producto con el id:${id} borrado`
+            return `producto borrado ${doc}`
         } catch (error) {
             console.log(error);
         }

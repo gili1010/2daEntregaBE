@@ -70,13 +70,7 @@ try {
     }
 
     async borrar(id) {
-        try {
-            const doc = dbProductos.doc(id);
-            const item = await doc.delete();
-            return `producto con el id:${id} borrado`
-        } catch (error) {
-            console.log(error);
-        }
+
     }
 
     async borrarAll() {

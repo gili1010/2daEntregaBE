@@ -53,30 +53,17 @@ class ContenedorFirebase {
     }
 
     async guardar(nuevoElem) {
-        const guardado = await dbProductos.add(nuevoElem);
+        const guardado = await dbProductos.add({ nuevoElem });
         console.log(guardado.id)
         return guardado
     }
 
     async actualizar(nuevoElem) {
-try {
-    let id = "cBrHHmdYIOpGVOfpAW3C"
-    const doc = dbProductos.doc(id);
-    let item = await doc.update(nuevoElem);
-    return item
-} catch (error) {
-    console.log(error);
-}
+
     }
 
     async borrar(id) {
-        try {
-            const doc = dbProductos.doc(id);
-            const item = await doc.delete();
-            return `producto con el id:${id} borrado`
-        } catch (error) {
-            console.log(error);
-        }
+
     }
 
     async borrarAll() {
